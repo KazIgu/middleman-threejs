@@ -1,7 +1,7 @@
 require 'middleman-core/templates'
 
 module Middleman
-  module Slim
+  module Three
 
     class Template < Middleman::Templates::Base
       class_option 'css_dir',
@@ -31,6 +31,11 @@ module Middleman
 
         empty_directory File.join(location, 'source', options[:js_dir])
         copy_file 'source/javascripts/all.js', File.join(location, 'source', options[:js_dir], 'all.js')
+        copy_file 'source/javascripts/jquery-1.11.0.min.js', File.join(location, 'source', options[:js_dir], 'jquery-1.11.0.min.js')
+        copy_file 'source/javascripts/main.coffee', File.join(location, 'source', options[:js_dir], 'main.coffee')
+        copy_file 'source/javascripts/three.min.js', File.join(location, 'source', options[:js_dir], 'three.min.js')
+        copy_file 'source/javascripts/TrackballControls.js', File.join(location, 'source', options[:js_dir], 'TrackballControls.js')
+        copy_file 'source/javascripts/tween.min.js', File.join(location, 'source', options[:js_dir], 'tween.min.js')
 
         empty_directory File.join(location, 'source', options[:images_dir])
         copy_file 'source/images/background.png', File.join(location, 'source', options[:images_dir], 'background.png')
@@ -56,4 +61,4 @@ module Middleman
   end
 end
 
-Middleman::Templates.register :slim, Middleman::Slim::Template
+Middleman::Templates.register :three, Middleman::Three::Template

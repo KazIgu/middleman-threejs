@@ -1,1 +1,1 @@
-require 'middleman-slim'
+require 'middleman-threejs'

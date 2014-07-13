@@ -1,7 +1,5 @@
-require "middleman/threejs/version"
+require 'middleman-core'
+require "middleman-threejs/version"
+require 'middleman-threejs/template'
 
-module Middleman
-  module Threejs
-    # Your code goes here...
-  end
-end
+Middleman::Templates.register :slim, Middleman::Slim::Template
